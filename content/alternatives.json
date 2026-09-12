@@ -1,0 +1,64 @@
+{
+  "comparisons": [
+    {
+      "slug": "sendgrid",
+      "competitorName": "SendGrid",
+      "title": "Histeria vs SendGrid — Transactional Email Infrastructure Comparison",
+      "subtitle": "Compare developer workflow, template management, and API design for transactional email.",
+      "description": "While SendGrid offers a wide spectrum of marketing newsletter tools, Histeria focuses strictly on transactional application email, featuring a clean developer API and built-in Visual/Code template editors.",
+      "dimensions": [
+        { "name": "Primary Focus", "histeria": "Pure Transactional Email Infrastructure", "competitor": "Marketing Newsletters & Transactional Email" },
+        { "name": "Template Editor", "histeria": "Dual Visual Builder + Code Editor", "competitor": "Design Editor & Marketing Automation Builder" },
+        { "name": "Authentication", "histeria": "Organization API Keys (x-api-key)", "competitor": "Bearer Token API Keys" },
+        { "name": "Versioning", "histeria": "Immutable Template Versions with Current Active pointer", "competitor": "Version History in UI" },
+        { "name": "Observability", "histeria": "Step-by-step Email Timeline & Lifecycle Logs", "competitor": "Activity Feed (Retention based on tier)" },
+        { "name": "SMTP Support", "histeria": "Full Organization SMTP Configuration", "competitor": "SMTP Relay Support" }
+      ]
+    },
+    {
+      "slug": "mailgun",
+      "competitorName": "Mailgun",
+      "title": "Histeria vs Mailgun — API & Developer Experience Comparison",
+      "subtitle": "Explore how Histeria and Mailgun structure transactional email delivery and template versioning.",
+      "description": "Mailgun is a traditional email service provider focused on domain routing and inbound parsing. Histeria provides a simple, modern API and template builder tailored for modern web apps.",
+      "dimensions": [
+        { "name": "Primary Focus", "histeria": "Application Transactional Email & Templates", "competitor": "Developer Email Delivery & Inbound Routing" },
+        { "name": "Template Engine", "histeria": "Visual Builder & HTML Code Editor", "competitor": "Handlebars & HTML Template Engine" },
+        { "name": "Authentication", "histeria": "Organization API Keys with optional Expiry", "competitor": "HTTP Basic Auth with API Key" },
+        { "name": "API Endpoint", "histeria": "JSON Payload: POST /v1/emails/send", "competitor": "Form Data / JSON API per Domain" },
+        { "name": "Observability", "histeria": "Detailed Lifecycle Event Visualization", "competitor": "Event Logs API & Analytics" },
+        { "name": "SMTP Support", "histeria": "Native Organization SMTP settings", "competitor": "SMTP Server per Domain" }
+      ]
+    },
+    {
+      "slug": "resend",
+      "competitorName": "Resend",
+      "title": "Histeria vs Resend — Transactional Email Platform Comparison",
+      "subtitle": "Compare REST API payloads, template management, and observability features.",
+      "description": "Both platforms prioritize modern developer experience for transactional application email. Histeria includes native Visual Builder & Code Editor tools alongside organization SMTP integration.",
+      "dimensions": [
+        { "name": "Primary Focus", "histeria": "Transactional Email API & Template Infrastructure", "competitor": "Modern Email API for Developers" },
+        { "name": "Template Editor", "histeria": "Visual Builder + HTML Code Editor", "competitor": "React Email Code Components" },
+        { "name": "Template Versioning", "histeria": "Immutable Version Control with Active Version State", "competitor": "Code-based Version Control" },
+        { "name": "SMTP Relay", "histeria": "Configurable Organization SMTP Support", "competitor": "API First Protocol" },
+        { "name": "Tracking & Logs", "histeria": "Full Timeline Logs (Queue to Delivered/Opened)", "competitor": "Logs & Webhooks" },
+        { "name": "Authentication", "histeria": "Organization API Keys with name & expiry controls", "competitor": "API Key Tokens" }
+      ]
+    },
+    {
+      "slug": "postmark",
+      "competitorName": "Postmark",
+      "title": "Histeria vs Postmark — Transactional Email Comparison",
+      "subtitle": "Evaluate developer setup, tracking granularity, and template workflows.",
+      "description": "Postmark is well known for transactional email specialization. Histeria offers a modern JSON API, explicit email state tracking, dual template builders, and organization security controls.",
+      "dimensions": [
+        { "name": "Primary Focus", "histeria": "Developer Transactional Infrastructure", "competitor": "Transactional Email Service" },
+        { "name": "Template Creation", "histeria": "Visual Builder + HTML Code Editor", "competitor": "Mustache HTML Templates" },
+        { "name": "Versioning", "histeria": "Draft, Active, Archived Template Statuses & Versions", "competitor": "Server-level Template Copying" },
+        { "name": "API Authentication", "histeria": "Header x-api-key with Org Key isolation", "competitor": "Server Token Header" },
+        { "name": "SMTP Integration", "histeria": "Organization SMTP Relay Configuration", "competitor": "SMTP Credentials per Server" },
+        { "name": "Email Lifecycle", "histeria": "Explicit status tracking (Queued, Processing, Sent, Delivered)", "competitor": "Message Activity Stream" }
+      ]
+    }
+  ]
+}

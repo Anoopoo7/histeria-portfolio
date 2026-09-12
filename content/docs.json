@@ -1,0 +1,106 @@
+{
+  "topics": [
+    {
+      "slug": "getting-started",
+      "title": "Getting Started with Histeria",
+      "category": "Quickstart",
+      "summary": "Learn how to get your first transactional email sent using Histeria's API or SMTP interface.",
+      "content": "Histeria is a transactional email infrastructure platform designed to make triggering application emails reliable and straightforward. Whether you are building a SaaS product, an ecommerce store, or a mobile app, Histeria provides a simple HTTP API and SMTP bridge.\n\n### Step 1: Create an API Key\nNavigate to your Histeria Dashboard and create an Organization API Key under **API Keys**. Store the raw key securely — it is shown only once.\n\n### Step 2: Create a Template\nBuild a template using the **Visual Builder** or **Code Editor**. Save it as an Active template version with a slug like `welcome-email`.\n\n### Step 3: Trigger an Email\nMake a POST request to `/v1/emails/send` with your `x-api-key` header.",
+      "endpoint": {
+        "method": "POST",
+        "path": "/v1/emails/send"
+      }
+    },
+    {
+      "slug": "authentication",
+      "title": "API Authentication",
+      "category": "Core Concepts",
+      "summary": "Understand organization API key authentication for triggering application emails.",
+      "content": "All requests to Histeria public email endpoints must include an organization API key passed via the `x-api-key` header.\n\n### Request Header\n```http\nx-api-key: ck_live_your_secret_key\n```\n\n### Security Best Practices\n- Store API keys securely in server-side environment variables (`.env`).\n- Never expose API keys in client-side code or public Git repositories.\n- Create separate API keys for Production and Staging environments.",
+      "endpoint": null
+    },
+    {
+      "slug": "api-keys",
+      "title": "Managing API Keys",
+      "category": "Core Concepts",
+      "summary": "Create, name, set expiration for, and revoke organization API keys from your dashboard.",
+      "content": "Histeria API keys belong to your Organization. You can manage multiple keys with granular names and optional expiration dates.\n\n### API Key Properties\n- **Name**: Custom descriptive label (e.g. `Production Store App`).\n- **Prefix**: Identifiable key prefix (e.g. `ck_live_...` or `ck_test_...`).\n- **Expiration**: Optional automatic key expiration date.\n- **Status**: Active or Revoked.\n\n### Key Revocation\nIf a key is compromised, revoke it immediately from the Histeria Dashboard. Revoked keys stop accepting send requests instantly.",
+      "endpoint": null
+    },
+    {
+      "slug": "send-email",
+      "title": "Send an Email",
+      "category": "API Reference",
+      "summary": "Trigger a transactional email using POST /v1/emails/send.",
+      "content": "The primary public API endpoint triggers an email for asynchronous delivery.\n\n### Request Payload Parameters\n| Field | Type | Required | Description |\n| --- | --- | --- | --- |\n| `templateId` | string | Yes | Template ID or slug (e.g. `order-confirmation`) |\n| `to` | string | Yes | Recipient email address |\n| `cc` | array[string] | No | Optional CC recipient email addresses |\n| `bcc` | array[string] | No | Optional BCC recipient email addresses |\n| `subject` | string | No | Optional subject line override |\n| `data` | object | No | Dynamic template variables |\n\n### Response (202 Accepted)\n```json\n{\n  \"id\": \"email_98ab71c2\",\n  \"status\": \"QUEUED\"\n}\n```",
+      "endpoint": {
+        "method": "POST",
+        "path": "/v1/emails/send"
+      }
+    },
+    {
+      "slug": "templates",
+      "title": "Email Templates",
+      "category": "Templates",
+      "summary": "Build reusable email templates using the Visual Builder or HTML Code Editor.",
+      "content": "Histeria templates separate email design from application code. Templates support two creation workflows:\n\n1. **Visual Builder**: Drag-and-drop text blocks, buttons, images, and container layouts.\n2. **Code Editor**: Direct HTML authoring with full control over CSS styles and dynamic markup.\n\nBoth workflows result in Histeria Templates ready to be triggered via `templateId` or slug.",
+      "endpoint": null
+    },
+    {
+      "slug": "template-variables",
+      "title": "Template Dynamic Variables",
+      "category": "Templates",
+      "summary": "Inject dynamic application variables into email templates.",
+      "content": "Templates support dynamic variables using double curly brace syntax.\n\n### Syntax Example\n```html\n<h1>Hello {{customerName}}</h1>\n<p>Your order number <strong>#{{orderNumber}}</strong> is confirmed.</p>\n```\n\nWhen sending an email via POST `/v1/emails/send`, supply values in the `data` object:\n```json\n{\n  \"templateId\": \"order-confirmation\",\n  \"to\": \"user@example.com\",\n  \"data\": {\n    \"customerName\": \"Sarah\",\n    \"orderNumber\": \"ORD-7749\"\n  }\n}\n```",
+      "endpoint": null
+    },
+    {
+      "slug": "template-versions",
+      "title": "Template Versioning",
+      "category": "Templates",
+      "summary": "Safely update templates with immutable versions and current active selection.",
+      "content": "Avoid breaking live application emails during template edits. Histeria maintains version history for every template.\n\n### Version Workflow\n- Create draft versions while editing design or layout.\n- View complete version history.\n- Set a specific version as the **Current Version**.\n- Activate the template. Applications using the `templateId` automatically use the designated Current Version.",
+      "endpoint": null
+    },
+    {
+      "slug": "smtp",
+      "title": "SMTP Integration",
+      "category": "Integrations",
+      "summary": "Configure SMTP settings to send email through Histeria without changing application API code.",
+      "content": "If your application framework already relies on standard SMTP (e.g. PHPMailer, Nodemailer, Rails ActionMailer, Django email backend), you can route emails through Histeria's SMTP relay.\n\n### Organization SMTP Settings\n- **Host**: Configurable SMTP host server\n- **Port**: Standard TLS/SSL ports (587 / 465)\n- **Authentication**: Organization SMTP Username & Password\n- **From Address & Name**: Default sender configuration\n- **Reply-To**: Optional reply routing",
+      "endpoint": null
+    },
+    {
+      "slug": "email-logs",
+      "title": "Email Timeline & Logs",
+      "category": "Observability",
+      "summary": "Audit every email record with step-by-step event history and delivery status.",
+      "content": "Every email sent through Histeria generates a clear timeline log.\n\n### Available Filter Criteria\n- Delivery Status (`QUEUED`, `PROCESSING`, `SENT`, `DELIVERED`, `BOUNCED`, `OPENED`, `CLICKED`, `FAILED`)\n- Template ID / Name\n- Recipient Email\n- Date / Timestamp Range\n\n### Individual Email Record Inspection\nEach log record displays queue time, send time, provider message ID, delivery timestamp, event history, tracking stats, and HTML preview.",
+      "endpoint": null
+    },
+    {
+      "slug": "tracking",
+      "title": "Email Tracking & Analytics",
+      "category": "Observability",
+      "summary": "Understand recipient engagement with open status, open count, click count, and timestamps.",
+      "content": "Histeria tracks post-send activity for sent emails.\n\n### Tracked Attributes\n- **Open Status**: boolean open indicator\n- **Open Count & Timestamps**: First opened time, last opened time, total opens\n- **Click Count & Timestamps**: First clicked time, last clicked time, total clicks\n- **Delivery Timestamps**: Exact timestamp of provider delivery acceptance\n- **Bounce Timestamps**: Timestamp and reason code for bounced emails",
+      "endpoint": null
+    },
+    {
+      "slug": "errors",
+      "title": "API Error Codes",
+      "category": "API Reference",
+      "summary": "High-level HTTP status codes returned by POST /v1/emails/send.",
+      "content": "Histeria returns standard HTTP status codes for API responses.\n\n| Status Code | Message | Cause |\n| --- | --- | --- |\n| `202 Accepted` | Email Queued | Request accepted and queued for delivery |\n| `401 Unauthorized` | Invalid API Key | Missing or revoked `x-api-key` header |\n| `404 Not Found` | Template Not Found | Specified `templateId` does not exist or is inactive |\n| `422 Unprocessable` | Validation Error | Missing required fields (`to`, `templateId`) |",
+      "endpoint": null
+    },
+    {
+      "slug": "usage",
+      "title": "Usage Quotas & Billing",
+      "category": "Account",
+      "summary": "Monitor monthly email volume, template usage, and team member seats.",
+      "content": "Your organization's dashboard provides real-time visibility into usage metrics for your current billing period.\n\n### Tracked Quotas\n- **Emails Sent**: Current count vs monthly plan limit\n- **Emails Remaining**: Calculated quota balance\n- **Templates Created**: Count vs plan template limit\n- **Organization Seats**: Active team members",
+      "endpoint": null
+    }
+  ]
+}

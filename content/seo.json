@@ -1,0 +1,24 @@
+{
+  "default": {
+    "title": "Histeria — Transactional Email Infrastructure for Modern Applications",
+    "description": "Trigger, manage, and track transactional emails from your applications using Histeria's simple API, templates, versioning, SMTP, and delivery logs."
+  },
+  "pages": {
+    "home": {
+      "title": "Histeria — Transactional email, without the complexity",
+      "description": "Trigger transactional emails with one simple REST API request, build templates visually or with code, track email lifecycle events, and integrate with SMTP."
+    },
+    "product": {
+      "title": "Product Overview — Histeria Transactional Email Infrastructure",
+      "description": "Factual architecture overview of Histeria's transactional email API, template engines, versioning, tracking, SMTP integration, and organization security."
+    },
+    "pricing": {
+      "title": "Pricing & Usage Limits — Histeria",
+      "description": "Transparent pricing plans for Histeria transactional email infrastructure. Start sending emails with clear monthly quotas and template controls."
+    },
+    "docs": {
+      "title": "Developer Documentation & API Reference — Histeria",
+      "description": "Comprehensive developer documentation for Histeria transactional email API, authentication, payload specs, SDK snippets, templates, SMTP, and logs."
+    }
+  }
+}

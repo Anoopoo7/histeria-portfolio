@@ -1,0 +1,24 @@
+{
+  "siteName": "Histeria",
+  "siteUrl": "https://histeria.dev",
+  "appUrl": "https://app.histeria.dev",
+  "apiBaseUrl": "https://api.histeria.dev/v1",
+  "cta": {
+    "primary": {
+      "label": "Start sending for free",
+      "href": "/docs/getting-started"
+    },
+    "secondary": {
+      "label": "Read the docs",
+      "href": "/docs"
+    },
+    "exploreApi": {
+      "label": "Explore the API",
+      "href": "/docs/send-email"
+    },
+    "viewTemplates": {
+      "label": "View templates",
+      "href": "/docs/templates"
+    }
+  }
+}

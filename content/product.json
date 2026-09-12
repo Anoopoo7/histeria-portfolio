@@ -1,0 +1,61 @@
+{
+  "name": "Histeria",
+  "category": "Transactional Email Platform",
+  "tagline": "Transactional email, without the complexity.",
+  "positioning": "Simple transactional email infrastructure for modern applications",
+  "description": "Histeria gives developers a simple way to send, manage, and track transactional email from their applications.",
+  "capabilities": [
+    "Transactional Email API",
+    "Email Templates",
+    "Visual Email Builder",
+    "Code HTML Templates",
+    "Template Versioning",
+    "Email Tracking & Analytics",
+    "Email Timeline Logs",
+    "SMTP Integration",
+    "Organization API Keys",
+    "Usage & Quota Visibility",
+    "Subscription Management"
+  ],
+  "integrations": [
+    "REST API",
+    "SMTP Protocol"
+  ],
+  "templateTypes": [
+    "BUILDER",
+    "CODE"
+  ],
+  "templateStatuses": [
+    "DRAFT",
+    "ACTIVE",
+    "ARCHIVED"
+  ],
+  "emailStatuses": [
+    "QUEUED",
+    "PROCESSING",
+    "SENT",
+    "DELIVERED",
+    "BOUNCED",
+    "OPENED",
+    "CLICKED",
+    "FAILED"
+  ],
+  "useCases": [
+    "Ecommerce",
+    "SaaS",
+    "Fintech",
+    "Banking",
+    "Marketplaces",
+    "Mobile Applications"
+  ],
+  "authentication": [
+    "Organization API Keys (Email API)",
+    "JWT Bearer Tokens (Dashboard API)"
+  ],
+  "security": [
+    "Organization-level API Key isolation",
+    "One-time secret key disclosure during generation",
+    "API Key Revocation & Expiration Controls",
+    "Server-side payment verification"
+  ]
+}

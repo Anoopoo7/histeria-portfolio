@@ -1,0 +1,28 @@
+{
+  "faqs": [
+    {
+      "question": "What is Histeria?",
+      "answer": "Histeria is a simple transactional email platform designed for applications, SaaS products, ecommerce stores, fintech apps, and developers. It allows you to trigger emails via a REST API or SMTP bridge with customizable templates and tracking."
+    },
+    {
+      "question": "How do I authenticate API calls?",
+      "answer": "All transactional email requests use organization API keys passed in the 'x-api-key' request header. You can generate, expire, and revoke keys directly from your dashboard."
+    },
+    {
+      "question": "What template editors are supported?",
+      "answer": "Histeria supports both a drag-and-drop Visual Builder and an HTML Code Editor. Both result in Histeria templates accessible by template ID or slug."
+    },
+    {
+      "question": "Does Histeria support SMTP?",
+      "answer": "Yes. If your backend already sends email using standard SMTP protocols, you can configure Histeria's organization SMTP settings without rewriting application code."
+    },
+    {
+      "question": "How does template versioning work?",
+      "answer": "Histeria maintains immutable template version histories. You can edit draft versions, preview changes, and designate a Current Version so application API triggers remain stable."
+    },
+    {
+      "question": "Can I track email open and click events?",
+      "answer": "Yes. Histeria records delivery, open count, first/last opened timestamps, click count, first/last clicked timestamps, and bounce reasons for each email."
+    }
+  ]
+}

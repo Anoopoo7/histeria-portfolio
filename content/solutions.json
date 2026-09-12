@@ -1,0 +1,124 @@
+{
+  "solutions": [
+    {
+      "slug": "ecommerce",
+      "title": "Ecommerce Transactional Email Infrastructure",
+      "subtitle": "Send order confirmations, shipping updates, and cart alerts with zero delivery friction.",
+      "description": "Keep customers informed instantly when orders are placed, dispatched, or refunded using Histeria's low-latency API and customizable template engine.",
+      "trigger": "Customer completes checkout on your store backend.",
+      "flow": [
+        { "step": 1, "name": "Checkout Event", "detail": "Your ecommerce store generates an order payload." },
+        { "step": 2, "name": "Histeria API", "detail": "POST /v1/emails/send called with templateId 'order-confirmation'." },
+        { "step": 3, "name": "Template Rendering", "detail": "Histeria populates order details, items array, and total amount." },
+        { "step": 4, "name": "Delivery & Tracking", "detail": "Email is queued, sent, delivered, and tracking status updated." }
+      ],
+      "useCases": [
+        "Order Receipt & Invoice",
+        "Shipment Tracking Notification",
+        "Refund & Return Confirmation",
+        "Abandoned Cart Reminder"
+      ],
+      "codeExample": "fetch('https://api.histeria.dev/v1/emails/send', {\n  method: 'POST',\n  headers: {\n    'x-api-key': 'ck_live_ecommerce_key',\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    templateId: 'order-confirmation',\n    to: 'customer@example.com',\n    data: {\n      customerName: 'Alice Johnson',\n      orderNumber: 'ORD-98214',\n      total: '$128.50'\n    }\n  })\n});"
+    },
+    {
+      "slug": "saas",
+      "title": "Transactional Email API for SaaS Platforms",
+      "subtitle": "Trigger user onboarding, email verification, password resets, and plan billing alerts automatically.",
+      "description": "Empower your web application with reliable API-driven transactional email sending that works seamlessly with modern React, Node, Python, and Go stacks.",
+      "trigger": "New user registers or triggers a password reset request.",
+      "flow": [
+        { "step": 1, "name": "App Event", "detail": "User clicks Sign Up or Request Password Reset." },
+        { "step": 2, "name": "Histeria API", "detail": "POST /v1/emails/send with user payload and secret token." },
+        { "step": 3, "name": "Template Version", "detail": "Active template version renders branded HTML email." },
+        { "step": 4, "name": "Observability", "detail": "View exact timestamp and status in Histeria email logs." }
+      ],
+      "useCases": [
+        "Email Address Verification",
+        "Secure Password Reset Links",
+        "Team Workspace Invitations",
+        "Monthly Subscription Receipts"
+      ],
+      "codeExample": "await fetch('https://api.histeria.dev/v1/emails/send', {\n  method: 'POST',\n  headers: {\n    'x-api-key': process.env.HISTERIA_API_KEY,\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    templateId: 'verify-email',\n    to: user.email,\n    data: {\n      verifyUrl: 'https://app.example.com/verify?token=abc123xyz'\n    }\n  })\n});"
+    },
+    {
+      "slug": "fintech",
+      "title": "Fintech Transactional Email Delivery",
+      "subtitle": "Deliver instant transaction receipts, transfer alerts, and verification codes reliably.",
+      "description": "Fintech applications require fast, predictable transaction notifications. Trigger emails instantly via Histeria's REST API or SMTP interface.",
+      "trigger": "User initiates a fund transfer or wallet transaction.",
+      "flow": [
+        { "step": 1, "name": "Transaction Event", "detail": "Backend processes transfer or payment event." },
+        { "step": 2, "name": "Histeria API Call", "detail": "Send email with payload via secure API key." },
+        { "step": 3, "name": "Queue & Dispatch", "detail": "Histeria asynchronously queues and dispatches email." },
+        { "step": 4, "name": "Timeline Verification", "detail": "Track delivery timeline state in developer dashboard." }
+      ],
+      "useCases": [
+        "Payment Receipt & Invoice",
+        "Instant Transfer Alert",
+        "Account Security Notice",
+        "KYC Document Verification Status"
+      ],
+      "codeExample": "import requests\n\nres = requests.post(\n  'https://api.histeria.dev/v1/emails/send',\n  headers={'x-api-key': 'ck_live_fintech_key'},\n  json={\n    'templateId': 'transfer-alert',\n    'to': 'user@example.com',\n    'data': {\n      'amount': '$250.00',\n      'recipient': 'Jane Doe'\n    }\n  }\n)"
+    },
+    {
+      "slug": "banking",
+      "title": "Application Email for Banking & Financial Services",
+      "subtitle": "Clear, organized notification delivery for digital banking platforms and credit portals.",
+      "description": "Send critical transaction notices, monthly statements, and login alerts through modern API infrastructure designed for development clarity.",
+      "trigger": "Banking system generates account activity or statement dispatch.",
+      "flow": [
+        { "step": 1, "name": "Core Banking System", "detail": "Generates account activity notification." },
+        { "step": 2, "name": "Histeria Infrastructure", "detail": "Validates template ID and routes payload safely." },
+        { "step": 3, "name": "Asynchronous Sending", "detail": "Processes email queue with full tracking history." },
+        { "step": 4, "name": "Log Audit", "detail": "Audits queue time, send time, and provider message ID." }
+      ],
+      "useCases": [
+        "Monthly Account Statement Alert",
+        "New Device Login Notice",
+        "Card Authorization Request",
+        "Loan Application Status"
+      ],
+      "codeExample": "curl -X POST https://api.histeria.dev/v1/emails/send \\\n  -H \"x-api-key: ck_live_banking_key\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"templateId\": \"login-alert\",\n    \"to\": \"account@bank.com\",\n    \"data\": {\n      \"ipAddress\": \"192.168.1.1\",\n      \"timestamp\": \"2026-09-13 10:00:00 UTC\"\n    }\n  }'"
+    },
+    {
+      "slug": "marketplaces",
+      "title": "Transactional Communications for Two-Sided Marketplaces",
+      "subtitle": "Keep buyers and sellers synced with automated multi-recipient notification templates.",
+      "description": "Notify sellers of new inquiries or orders and provide buyers with order confirmations simultaneously using optional CC/BCC capabilities.",
+      "trigger": "Buyer submits a booking or purchase request on marketplace.",
+      "flow": [
+        { "step": 1, "name": "Marketplace Event", "detail": "Booking confirmed between buyer and merchant." },
+        { "step": 2, "name": "Histeria API Call", "detail": "Pass recipient 'buyer@example.com' with cc 'seller@example.com'." },
+        { "step": 3, "name": "Template Rendering", "detail": "Merges marketplace booking code and detail variables." },
+        { "step": 4, "name": "Delivery Tracking", "detail": "Monitor status changes in real-time." }
+      ],
+      "useCases": [
+        "New Order Notification for Sellers",
+        "Booking Confirmation for Buyers",
+        "Payout Received Notice",
+        "Dispute & Support Ticket Alert"
+      ],
+      "codeExample": "fetch('https://api.histeria.dev/v1/emails/send', {\n  method: 'POST',\n  headers: {\n    'x-api-key': 'ck_live_marketplace_key',\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    templateId: 'booking-notification',\n    to: 'buyer@example.com',\n    cc: ['seller@example.com'],\n    data: {\n      serviceName: 'Graphic Design Project',\n      bookingId: 'BK-7712'\n    }\n  })\n});"
+    },
+    {
+      "slug": "mobile-apps",
+      "title": "Email Infrastructure for Mobile Applications",
+      "subtitle": "Power iOS and Android app notifications, auth codes, and push backup alerts.",
+      "description": "Connect your mobile app backend (Firebase, Supabase, Node, Rails) to Histeria's transactional API to send instant One-Time Passwords (OTPs) and account codes.",
+      "trigger": "Mobile app requests OTP code during sign-in.",
+      "flow": [
+        { "step": 1, "name": "Mobile App Request", "detail": "User taps 'Send Verification Code'." },
+        { "step": 2, "name": "Backend API Trigger", "detail": "App backend calls Histeria POST /v1/emails/send." },
+        { "step": 3, "name": "Low Latency Queue", "detail": "Email dispatched asynchronously in milliseconds." },
+        { "step": 4, "name": "Delivery Audit", "detail": "Developer reviews queue and send times in log timeline." }
+      ],
+      "useCases": [
+        "One-Time Password (OTP) Auth",
+        "In-App Purchase Invoice",
+        "Friend Request & Activity Alert",
+        "Account Recovery Security Code"
+      ],
+      "codeExample": "await fetch('https://api.histeria.dev/v1/emails/send', {\n  method: 'POST',\n  headers: {\n    'x-api-key': process.env.HISTERIA_MOBILE_KEY,\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    templateId: 'otp-code',\n    to: userEmail,\n    data: {\n      otpCode: '849201'\n    }\n  })\n});"
+    }
+  ]
+}

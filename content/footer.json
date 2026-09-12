@@ -1,0 +1,44 @@
+{
+  "sections": [
+    {
+      "title": "Product",
+      "links": [
+        { "label": "Overview", "href": "/product" },
+        { "label": "Pricing & Plans", "href": "/pricing" },
+        { "label": "Templates", "href": "/docs/templates" },
+        { "label": "Email Tracking", "href": "/docs/tracking" }
+      ]
+    },
+    {
+      "title": "Solutions",
+      "links": [
+        { "label": "Ecommerce", "href": "/solutions/ecommerce" },
+        { "label": "SaaS Platforms", "href": "/solutions/saas" },
+        { "label": "Fintech Apps", "href": "/solutions/fintech" },
+        { "label": "Banking", "href": "/solutions/banking" },
+        { "label": "Marketplaces", "href": "/solutions/marketplaces" },
+        { "label": "Mobile Apps", "href": "/solutions/mobile-apps" }
+      ]
+    },
+    {
+      "title": "Developers",
+      "links": [
+        { "label": "Documentation", "href": "/docs" },
+        { "label": "API Reference", "href": "/docs/send-email" },
+        { "label": "Quickstart Guide", "href": "/docs/getting-started" },
+        { "label": "SMTP Relay", "href": "/docs/smtp" },
+        { "label": "Error Codes", "href": "/docs/errors" }
+      ]
+    },
+    {
+      "title": "Alternatives",
+      "links": [
+        { "label": "SendGrid Alternative", "href": "/alternatives/sendgrid" },
+        { "label": "Mailgun Alternative", "href": "/alternatives/mailgun" },
+        { "label": "Resend Alternative", "href": "/alternatives/resend" },
+        { "label": "Postmark Alternative", "href": "/alternatives/postmark" }
+      ]
+    }
+  ],
+  "copyright": "© 2026 Histeria Technologies Inc. All rights reserved. Transactional email infrastructure."
+}

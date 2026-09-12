@@ -1,0 +1,19 @@
+{
+  "main": [
+    { "label": "Product", "href": "/product" },
+    {
+      "label": "Solutions",
+      "href": "/solutions/saas",
+      "children": [
+        { "label": "Ecommerce", "href": "/solutions/ecommerce", "description": "Order confirmations & shipping alerts" },
+        { "label": "SaaS", "href": "/solutions/saas", "description": "Onboarding & account notifications" },
+        { "label": "Fintech", "href": "/solutions/fintech", "description": "Transaction receipts & transfer alerts" },
+        { "label": "Banking", "href": "/solutions/banking", "description": "Account activity & login security" },
+        { "label": "Marketplaces", "href": "/solutions/marketplaces", "description": "Multi-recipient buyer/seller sync" },
+        { "label": "Mobile Apps", "href": "/solutions/mobile-apps", "description": "OTP codes & mobile app auth" }
+      ]
+    },
+    { "label": "Docs", "href": "/docs" },
+    { "label": "Pricing", "href": "/pricing" }
+  ]
+}

@@ -1,0 +1,34 @@
+# Histeria — Transactional Email Infrastructure for Applications
+
+> Transactional email, without the complexity.
+
+## What is Histeria?
+Histeria is a simple transactional email platform for applications, SaaS products, developers, ecommerce platforms, fintech apps, and mobile applications.
+
+## Key Capabilities
+- **Transactional Email API**: Trigger application emails with simple HTTP REST requests (`POST /v1/emails/send`).
+- **Template Engines**: Dual support for Visual Drag-and-Drop Builder and HTML Code Editor.
+- **Template Versioning**: Safe, immutable template versions with a single active current version pointer.
+- **SMTP Support**: Route existing application email workflows through organization SMTP settings.
+- **Email Observability**: Real-time event tracking (`QUEUED`, `PROCESSING`, `SENT`, `DELIVERED`, `BOUNCED`, `OPENED`, `CLICKED`, `FAILED`).
+- **Developer Security**: Organization-level API key authorization (`x-api-key`), one-time secret key disclosure, and instant key revocation.
+
+## Primary API Signature
+- Endpoint: `POST https://api.histeria.dev/v1/emails/send`
+- Auth Header: `x-api-key: YOUR_API_KEY`
+- Sample Payload:
+```json
+{
+  "templateId": "order-confirmation",
+  "to": "customer@example.com",
+  "data": {
+    "customerName": "Jane",
+    "orderNumber": "ORD-9912"
+  }
+}
+```
+
+## Learn More
+- Documentation: https://histeria.dev/docs
+- Product Specs: https://histeria.dev/product
+- Pricing & Limits: https://histeria.dev/pricing

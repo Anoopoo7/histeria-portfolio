@@ -1,0 +1,67 @@
+{
+  "currency": "USD",
+  "billingIntervals": ["monthly"],
+  "plans": [
+    {
+      "code": "FREE",
+      "name": "Free",
+      "tagline": "Ideal for side projects and early testing",
+      "price": 0,
+      "currency": "USD",
+      "billingInterval": "monthly",
+      "monthlyEmailLimit": 1000,
+      "templateLimit": 10,
+      "memberLimit": 1,
+      "isPopular": false,
+      "features": [
+        "1,000 emails / month",
+        "Up to 10 template versions",
+        "Visual Builder & Code Editor",
+        "Public REST API & SMTP Support",
+        "Basic email timeline logs",
+        "1 Organization member"
+      ]
+    },
+    {
+      "code": "PRO",
+      "name": "Pro",
+      "tagline": "For growing SaaS, apps & store platforms",
+      "price": 29,
+      "currency": "USD",
+      "billingInterval": "monthly",
+      "monthlyEmailLimit": 50000,
+      "templateLimit": 50,
+      "memberLimit": 5,
+      "isPopular": true,
+      "features": [
+        "50,000 emails / month",
+        "50 Active template versions",
+        "Visual & HTML template builders",
+        "Full email tracking & timeline history",
+        "SMTP & API key management",
+        "5 Organization members",
+        "Priority email queue processing"
+      ]
+    },
+    {
+      "code": "BUSINESS",
+      "name": "Business",
+      "tagline": "For high-volume platforms and enterprise apps",
+      "price": null,
+      "currency": "USD",
+      "billingInterval": "monthly",
+      "monthlyEmailLimit": null,
+      "templateLimit": null,
+      "memberLimit": null,
+      "isPopular": false,
+      "features": [
+        "Custom high-volume email limits",
+        "Unlimited email templates & versions",
+        "Dedicated API key controls & expiry",
+        "Extended log retention & event history",
+        "Multi-member team access",
+        "Dedicated infrastructure onboarding"
+      ]
+    }
+  ]
+}
