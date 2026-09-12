@@ -25,12 +25,15 @@ import type {
   AlternativeItem
 } from "@/types/content";
 
+import { siteConfig } from "@/lib/site-config";
+
 export function getSiteConfig(): SiteConfig {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || siteConfigData.appUrl;
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || siteConfigData.apiBaseUrl;
 
   return {
     ...siteConfigData,
+    siteUrl: siteConfig.siteUrl,
     appUrl,
     apiBaseUrl
   };
