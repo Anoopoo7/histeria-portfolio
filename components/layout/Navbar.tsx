@@ -84,13 +84,17 @@ export default function Navbar() {
           {/* Desktop Right CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              href={siteConfig.appUrl}
+              href={siteConfig.loginUrl || siteConfig.appUrl}
+              target={(siteConfig.loginUrl || siteConfig.appUrl).startsWith("http") ? "_blank" : undefined}
+              rel={(siteConfig.loginUrl || siteConfig.appUrl).startsWith("http") ? "noopener noreferrer" : undefined}
               className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
             >
               Sign In
             </Link>
             <Link
               href={siteConfig.cta.primary.href}
+              target={siteConfig.cta.primary.href.startsWith("http") ? "_blank" : undefined}
+              rel={siteConfig.cta.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-600/25 hover:bg-indigo-500 hover:shadow-indigo-500/35 transition-all"
             >
               {siteConfig.cta.primary.label}
@@ -144,13 +148,17 @@ export default function Navbar() {
 
           <div className="mt-6 pt-4 border-t border-white/10 flex flex-col gap-3">
             <Link
-              href={siteConfig.appUrl}
+              href={siteConfig.loginUrl || siteConfig.appUrl}
+              target={(siteConfig.loginUrl || siteConfig.appUrl).startsWith("http") ? "_blank" : undefined}
+              rel={(siteConfig.loginUrl || siteConfig.appUrl).startsWith("http") ? "noopener noreferrer" : undefined}
               className="w-full text-center py-2 text-sm font-medium text-slate-300 hover:text-white"
             >
               Sign In
             </Link>
             <Link
               href={siteConfig.cta.primary.href}
+              target={siteConfig.cta.primary.href.startsWith("http") ? "_blank" : undefined}
+              rel={siteConfig.cta.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
               onClick={() => setMobileMenuOpen(false)}
               className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-indigo-500"
             >

@@ -1,24 +1,176 @@
 {
   "default": {
-    "title": "Histeria — Transactional Email Infrastructure for Modern Applications",
-    "description": "Trigger, manage, and track transactional emails from your applications using Histeria's simple API, templates, versioning, SMTP, and delivery logs."
+    "title": "Histeria — Transactional Email, Without the Complexity",
+    "description": "Send, manage, and track transactional email from your applications with Histeria's simple API, templates, versioning, SMTP, and real-time logs.",
+    "keywords": [
+      "transactional email",
+      "transactional email API",
+      "email API",
+      "email API for developers",
+      "developer email platform",
+      "transactional email service",
+      "SMTP email service",
+      "application email"
+    ]
   },
   "pages": {
     "home": {
-      "title": "Histeria — Transactional email, without the complexity",
-      "description": "Trigger transactional emails with one simple REST API request, build templates visually or with code, track email lifecycle events, and integrate with SMTP."
+      "title": "Histeria — Transactional Email, Without the Complexity",
+      "description": "Trigger transactional emails with one simple REST API request, build templates visually or with code, track email lifecycle events, and integrate with SMTP.",
+      "path": "/",
+      "keywords": [
+        "transactional email",
+        "transactional email API",
+        "email API",
+        "email API for developers",
+        "developer email platform",
+        "SMTP email service",
+        "application email"
+      ]
     },
     "product": {
-      "title": "Product Overview — Histeria Transactional Email Infrastructure",
-      "description": "Factual architecture overview of Histeria's transactional email API, template engines, versioning, tracking, SMTP integration, and organization security."
+      "title": "Product Overview | Histeria Transactional Infrastructure",
+      "description": "Factual architecture overview of Histeria's transactional email API, template engines, versioning, tracking, SMTP integration, and organization security.",
+      "path": "/product",
+      "keywords": [
+        "email infrastructure",
+        "transactional email API",
+        "email templates for developers",
+        "SMTP relay settings",
+        "API key security"
+      ]
     },
     "pricing": {
-      "title": "Pricing & Usage Limits — Histeria",
-      "description": "Transparent pricing plans for Histeria transactional email infrastructure. Start sending emails with clear monthly quotas and template controls."
+      "title": "Histeria Pricing | Transactional Email Plans",
+      "description": "Transparent pricing plans for Histeria transactional email infrastructure. Start sending emails with clear monthly quotas and template controls.",
+      "path": "/pricing",
+      "keywords": [
+        "transactional email pricing",
+        "email API cost",
+        "developer email plans",
+        "free email API quota"
+      ]
     },
     "docs": {
-      "title": "Developer Documentation & API Reference — Histeria",
-      "description": "Comprehensive developer documentation for Histeria transactional email API, authentication, payload specs, SDK snippets, templates, SMTP, and logs."
+      "title": "Developer Documentation | Histeria API Reference",
+      "description": "Comprehensive developer documentation for Histeria transactional email API, authentication headers, payload contracts, templates, SMTP, and logs.",
+      "path": "/docs",
+      "keywords": [
+        "histeria documentation",
+        "transactional email API reference",
+        "POST emails send endpoint",
+        "email API tutorial"
+      ]
+    },
+    "solutions-ecommerce": {
+      "title": "Transactional Email for Ecommerce | Histeria",
+      "description": "Send order confirmations, shipping notifications, and refund alerts with zero delivery friction using Histeria's fast transactional API.",
+      "path": "/solutions/ecommerce",
+      "keywords": [
+        "ecommerce transactional email",
+        "order confirmation email API",
+        "shipping tracking notification",
+        "store receipt API"
+      ]
+    },
+    "solutions-saas": {
+      "title": "Transactional Email API for SaaS Platforms | Histeria",
+      "description": "Trigger user onboarding, email verification, password resets, and subscription receipts automatically from your SaaS backend.",
+      "path": "/solutions/saas",
+      "keywords": [
+        "SaaS email API",
+        "email verification API",
+        "password reset email service",
+        "app notification API"
+      ]
+    },
+    "solutions-fintech": {
+      "title": "Fintech Transactional Email Delivery | Histeria",
+      "description": "Deliver instant transaction receipts, transfer alerts, and security notifications reliably using Histeria's low-latency email API.",
+      "path": "/solutions/fintech",
+      "keywords": [
+        "fintech email delivery",
+        "transaction receipt email API",
+        "payment notification API",
+        "transfer alert email"
+      ]
+    },
+    "solutions-banking": {
+      "title": "Application Email for Banking Services | Histeria",
+      "description": "Clear, organized notification delivery for digital banking platforms, monthly statement alerts, and card authorization notices.",
+      "path": "/solutions/banking",
+      "keywords": [
+        "banking email infrastructure",
+        "monthly statement email API",
+        "security login notification",
+        "financial service email"
+      ]
+    },
+    "solutions-marketplaces": {
+      "title": "Transactional Emails for Marketplaces | Histeria",
+      "description": "Keep buyers and sellers synced with automated multi-recipient notification templates, order alerts, and booking updates.",
+      "path": "/solutions/marketplaces",
+      "keywords": [
+        "marketplace email API",
+        "buyer seller notification",
+        "multi recipient transactional email",
+        "booking confirmation email"
+      ]
+    },
+    "solutions-mobile-apps": {
+      "title": "Email Infrastructure for Mobile Applications | Histeria",
+      "description": "Power iOS and Android app notifications, One-Time Password (OTP) auth codes, and account recovery emails via REST API.",
+      "path": "/solutions/mobile-apps",
+      "keywords": [
+        "mobile app email API",
+        "OTP email API",
+        "password reset mobile email",
+        "auth verification email"
+      ]
+    },
+    "alt-sendgrid": {
+      "title": "Histeria vs SendGrid — Transactional Email Infrastructure",
+      "description": "Compare developer workflow, template management, and API design between Histeria and SendGrid for application transactional email.",
+      "path": "/alternatives/sendgrid",
+      "keywords": [
+        "SendGrid alternative",
+        "SendGrid comparison",
+        "transactional email alternative",
+        "developer email platform"
+      ]
+    },
+    "alt-mailgun": {
+      "title": "Histeria vs Mailgun — API & Developer Experience Comparison",
+      "description": "Explore how Histeria and Mailgun structure transactional email delivery, template versioning, and organization API keys.",
+      "path": "/alternatives/mailgun",
+      "keywords": [
+        "Mailgun alternative",
+        "Mailgun comparison",
+        "transactional email API",
+        "email templates API"
+      ]
+    },
+    "alt-resend": {
+      "title": "Histeria vs Resend — Transactional Email Platform Comparison",
+      "description": "Compare REST API payloads, template management, visual builders, and observability features between Histeria and Resend.",
+      "path": "/alternatives/resend",
+      "keywords": [
+        "Resend alternative",
+        "Resend comparison",
+        "email API for developers",
+        "visual email builder"
+      ]
+    },
+    "alt-postmark": {
+      "title": "Histeria vs Postmark — Transactional Email Comparison",
+      "description": "Evaluate developer setup, tracking granularity, dual template builders, and organization security controls between Histeria and Postmark.",
+      "path": "/alternatives/postmark",
+      "keywords": [
+        "Postmark alternative",
+        "Postmark comparison",
+        "transactional email service",
+        "email timeline logs"
+      ]
     }
   }
 }

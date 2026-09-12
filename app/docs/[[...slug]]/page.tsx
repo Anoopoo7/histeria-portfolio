@@ -7,6 +7,7 @@ import CodeSnippetTab from "@/components/code/CodeSnippetTab";
 import MarkdownRenderer from "@/components/docs/MarkdownRenderer";
 import { getDocsConfig, getDocTopicBySlug } from "@/lib/content";
 import { generatePageMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import { Terminal, ArrowRight, ArrowLeft, BookOpen } from "lucide-react";
 
 export function generateStaticParams() {
@@ -24,13 +25,13 @@ export async function generateMetadata({
   const slugStr = resolvedParams.slug?.[0] || "getting-started";
   const topic = getDocTopicBySlug(slugStr);
 
-  if (!topic) return generatePageMetadata("docs");
+  if (!topic) return generatePageMetadata({ pageKey: "docs" });
 
-  return generatePageMetadata(
-    undefined,
-    `${topic.title} — Histeria Developer Docs`,
-    topic.summary
-  );
+  return generatePageMetadata({
+    title: `${topic.title} | Histeria Developer Docs`,
+    description: topic.summary,
+    path: `/docs/${topic.slug}`
+  });
 }
 
 export default async function DocsPage({
@@ -53,8 +54,19 @@ export default async function DocsPage({
   const prevTopic = currentIndex > 0 ? docsConfig.topics[currentIndex - 1] : null;
   const nextTopic = currentIndex < docsConfig.topics.length - 1 ? docsConfig.topics[currentIndex + 1] : null;
 
+  const breadcrumbJsonLd = breadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Docs", item: "/docs" },
+    { name: currentTopic.title, item: `/docs/${currentTopic.slug}` }
+  ]);
+
   return (
     <div className="flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] border-b border-white/10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* Sidebar */}
       <DocsSidebar activeSlug={currentTopic.slug} />
 

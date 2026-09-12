@@ -36,6 +36,8 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
               href={siteConfig.cta.primary.href}
+              target={siteConfig.cta.primary.href.startsWith("http") ? "_blank" : undefined}
+              rel={siteConfig.cta.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-base font-semibold text-white shadow-xl shadow-indigo-600/30 hover:bg-indigo-500 transition-all hover:scale-[1.02]"
             >
               {siteConfig.cta.primary.label}

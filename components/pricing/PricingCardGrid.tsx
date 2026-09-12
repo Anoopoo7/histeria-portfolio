@@ -82,7 +82,7 @@ export default function PricingCardGrid() {
                     {plan.price !== null ? (
                       <div className="flex items-baseline gap-1">
                         <span className="text-4xl font-extrabold text-white">
-                          ${plan.price}
+                          {plan.currency === "INR" ? "₹" : "$"}{plan.price.toLocaleString(plan.currency === "INR" ? "en-IN" : "en-US")}
                         </span>
                         <span className="text-xs text-slate-400 font-mono">
                           / month
@@ -110,6 +110,8 @@ export default function PricingCardGrid() {
                 <div className="mt-8 pt-4 border-t border-white/10">
                   <Link
                     href={siteConfig.cta.primary.href}
+                    target={siteConfig.cta.primary.href.startsWith("http") ? "_blank" : undefined}
+                    rel={siteConfig.cta.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className={`w-full inline-flex items-center justify-center gap-2 rounded-xl py-3 px-4 text-sm font-semibold transition-all ${
                       isPopular
                         ? "bg-indigo-600 text-white hover:bg-indigo-500 shadow-lg shadow-indigo-600/30"

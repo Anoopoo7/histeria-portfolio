@@ -63,6 +63,8 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link
               href={siteConfig.cta.primary.href}
+              target={siteConfig.cta.primary.href.startsWith("http") ? "_blank" : undefined}
+              rel={siteConfig.cta.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-8 py-4 text-base font-semibold text-white shadow-2xl shadow-indigo-600/40 hover:bg-indigo-500 transition-all hover:scale-[1.02]"
             >
               {siteConfig.cta.primary.label}

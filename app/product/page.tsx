@@ -1,18 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { generatePageMetadata } from "@/lib/seo";
+import { faqSchema, breadcrumbSchema } from "@/lib/structured-data";
 import { getProductConfig, getSiteConfig, getFaqConfig } from "@/lib/content";
 import { CheckCircle2, ArrowRight, ShieldCheck, Terminal, Server, Key, FileText, Cpu } from "lucide-react";
 
-export const metadata: Metadata = generatePageMetadata("product");
+export const metadata: Metadata = generatePageMetadata({ pageKey: "product" });
 
 export default function ProductPage() {
   const product = getProductConfig();
   const siteConfig = getSiteConfig();
   const faqConfig = getFaqConfig();
 
+  const faqsJsonLd = faqSchema(faqConfig.faqs);
+  const breadcrumbJsonLd = breadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Product", item: "/product" }
+  ]);
+
   return (
     <div className="py-16 md:py-24 border-b border-white/10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqsJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Header */}
         <div className="text-center space-y-4">
@@ -115,6 +131,8 @@ export default function ProductPage() {
         <div className="text-center pt-8">
           <Link
             href={siteConfig.cta.primary.href}
+            target={siteConfig.cta.primary.href.startsWith("http") ? "_blank" : undefined}
+            rel={siteConfig.cta.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
             className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-indigo-500 transition-all"
           >
             Explore Developer Documentation

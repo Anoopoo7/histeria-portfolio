@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getSolutionsConfig, getSolutionBySlug, getSiteConfig } from "@/lib/content";
 import { generatePageMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import { ArrowRight, CheckCircle2, Terminal, Layers } from "lucide-react";
 
 export function generateStaticParams() {
@@ -15,11 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const solution = getSolutionBySlug(slug);
   if (!solution) return generatePageMetadata();
 
-  return generatePageMetadata(
-    undefined,
-    `${solution.title} — Histeria`,
-    solution.subtitle
-  );
+  return generatePageMetadata({
+    pageKey: `solutions-${slug}`,
+    title: `${solution.title} | Histeria`,
+    description: solution.subtitle,
+    path: `/solutions/${slug}`
+  });
 }
 
 export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -31,8 +33,19 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const breadcrumbJsonLd = breadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Solutions", item: `/solutions/${solution.slug}` },
+    { name: solution.title, item: `/solutions/${solution.slug}` }
+  ]);
+
   return (
     <div className="py-16 md:py-24 border-b border-white/10 space-y-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="text-center space-y-4">
@@ -106,6 +119,8 @@ export default async function SolutionPage({ params }: { params: Promise<{ slug:
         <div className="text-center pt-8 border-t border-white/10">
           <Link
             href={siteConfig.cta.primary.href}
+            target={siteConfig.cta.primary.href.startsWith("http") ? "_blank" : undefined}
+            rel={siteConfig.cta.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
             className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-indigo-500 transition-all"
           >
             {siteConfig.cta.primary.label}

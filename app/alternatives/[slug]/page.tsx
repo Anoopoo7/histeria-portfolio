@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAlternativesConfig, getAlternativeBySlug, getSiteConfig } from "@/lib/content";
 import { generatePageMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import { ArrowRight, Scale } from "lucide-react";
 
 export function generateStaticParams() {
@@ -15,11 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const comparison = getAlternativeBySlug(slug);
   if (!comparison) return generatePageMetadata();
 
-  return generatePageMetadata(
-    undefined,
-    comparison.title,
-    comparison.subtitle
-  );
+  return generatePageMetadata({
+    pageKey: `alt-${slug}`,
+    title: comparison.title,
+    description: comparison.subtitle,
+    path: `/alternatives/${slug}`
+  });
 }
 
 export default async function AlternativePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -31,8 +33,19 @@ export default async function AlternativePage({ params }: { params: Promise<{ sl
     notFound();
   }
 
+  const breadcrumbJsonLd = breadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Alternatives", item: `/alternatives/${comparison.slug}` },
+    { name: `Histeria vs ${comparison.competitorName}`, item: `/alternatives/${comparison.slug}` }
+  ]);
+
   return (
     <div className="py-16 md:py-24 border-b border-white/10 space-y-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="text-center space-y-4">
@@ -88,6 +101,8 @@ export default async function AlternativePage({ params }: { params: Promise<{ sl
           <div>
             <Link
               href={siteConfig.cta.primary.href}
+              target={siteConfig.cta.primary.href.startsWith("http") ? "_blank" : undefined}
+              rel={siteConfig.cta.primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-indigo-500 transition-all"
             >
               {siteConfig.cta.primary.label}

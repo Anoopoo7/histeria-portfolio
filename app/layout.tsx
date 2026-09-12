@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { generatePageMetadata } from "@/lib/seo";
-import { getProductConfig } from "@/lib/content";
+import { organizationSchema, websiteSchema, softwareApplicationSchema } from "@/lib/structured-data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,29 +16,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = generatePageMetadata("home");
+export const metadata: Metadata = generatePageMetadata({ pageKey: "home" });
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const product = getProductConfig();
-
-  // JSON-LD Structured Data Schema for SoftwareApplication
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: product.name,
-    operatingSystem: "Cloud API",
-    applicationCategory: "DeveloperApplication",
-    description: product.description,
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD"
-    }
-  };
+  const orgJsonLd = organizationSchema();
+  const siteJsonLd = websiteSchema();
+  const appJsonLd = softwareApplicationSchema();
 
   return (
     <html
@@ -48,7 +35,15 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#07090e] text-slate-100 selection:bg-indigo-600 selection:text-white">

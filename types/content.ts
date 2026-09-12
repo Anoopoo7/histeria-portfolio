@@ -2,6 +2,7 @@ export interface SiteConfig {
   siteName: string;
   siteUrl: string;
   appUrl: string;
+  loginUrl: string;
   apiBaseUrl: string;
   cta: {
     primary: { label: string; href: string };
@@ -30,6 +31,8 @@ export interface ProductConfig {
 export interface SeoPageMetadata {
   title: string;
   description: string;
+  path?: string;
+  keywords?: string[];
 }
 
 export interface SeoConfig {

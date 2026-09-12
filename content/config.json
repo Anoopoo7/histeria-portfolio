@@ -1,12 +1,13 @@
 {
   "siteName": "Histeria",
   "siteUrl": "https://histeria.dev",
-  "appUrl": "https://app.histeria.dev",
+  "appUrl": "https://histeriamails.vercel.app",
+  "loginUrl": "https://histeriamails.vercel.app/login",
   "apiBaseUrl": "https://api.histeria.dev/v1",
   "cta": {
     "primary": {
       "label": "Start sending for free",
-      "href": "/docs/getting-started"
+      "href": "https://histeriamails.vercel.app/login"
     },
     "secondary": {
       "label": "Read the docs",

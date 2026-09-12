@@ -3,32 +3,58 @@
 > Transactional email, without the complexity.
 
 ## What is Histeria?
-Histeria is a simple transactional email platform for applications, SaaS products, developers, ecommerce platforms, fintech apps, and mobile applications.
+Histeria is a simple transactional email platform for developers, applications, SaaS products, ecommerce platforms, fintech apps, banking portals, marketplaces, and mobile applications.
 
-## Key Capabilities
-- **Transactional Email API**: Trigger application emails with simple HTTP REST requests (`POST /v1/emails/send`).
+## Core Value Proposition
+- **Send transactional email without the complexity**: Low-latency REST API and SMTP bridge for triggering application emails.
+- **Email Infrastructure for modern applications**: Dedicated API keys, template versioning, tracking, and delivery logs.
+
+## Verified Capabilities
+- **Transactional Email API**: Trigger emails via `POST /v1/emails/send` with authentication header `x-api-key: YOUR_API_KEY`.
 - **Template Engines**: Dual support for Visual Drag-and-Drop Builder and HTML Code Editor.
-- **Template Versioning**: Safe, immutable template versions with a single active current version pointer.
-- **SMTP Support**: Route existing application email workflows through organization SMTP settings.
-- **Email Observability**: Real-time event tracking (`QUEUED`, `PROCESSING`, `SENT`, `DELIVERED`, `BOUNCED`, `OPENED`, `CLICKED`, `FAILED`).
-- **Developer Security**: Organization-level API key authorization (`x-api-key`), one-time secret key disclosure, and instant key revocation.
+- **Template Versioning**: Safe immutable template versioning with current active version selection.
+- **SMTP Protocol Support**: Configure organization SMTP host, port (587 TLS), username, password, from name, from email, and reply-to.
+- **Email Lifecycle Tracking**: Explicit tracking states (`QUEUED`, `PROCESSING`, `SENT`, `DELIVERED`, `BOUNCED`, `OPENED`, `CLICKED`, `FAILED`).
+- **Observability**: Detailed timeline logs displaying provider message IDs, queue times, send times, and delivery metrics.
+- **Developer Security**: Organization-isolated API keys with optional expiration and one-touch key revocation controls.
 
-## Primary API Signature
+## API Endpoint Contract
 - Endpoint: `POST https://api.histeria.dev/v1/emails/send`
 - Auth Header: `x-api-key: YOUR_API_KEY`
-- Sample Payload:
+- Request Body Format:
 ```json
 {
   "templateId": "order-confirmation",
   "to": "customer@example.com",
+  "cc": ["manager@example.com"],
+  "subject": "Optional Subject Override",
   "data": {
-    "customerName": "Jane",
-    "orderNumber": "ORD-9912"
+    "customerName": "Jane Doe",
+    "orderNumber": "ORD-9912",
+    "total": "$120.00"
   }
 }
 ```
+- Response (202 Accepted):
+```json
+{
+  "id": "email_98ab71c2",
+  "status": "QUEUED"
+}
+```
 
-## Learn More
+## Primary Vertical Solutions
+- Ecommerce (`/solutions/ecommerce`): Order receipts, shipping updates, refund confirmations.
+- SaaS (`/solutions/saas`): Email address verification, password resets, workspace invitations.
+- Fintech (`/solutions/fintech`): Transaction receipts, transfer alerts, security notices.
+- Banking (`/solutions/banking`): Monthly account statements, device login alerts, card authorization notices.
+- Marketplaces (`/solutions/marketplaces`): Seller order alerts, buyer confirmations, booking updates.
+- Mobile Apps (`/solutions/mobile-apps`): One-Time Password (OTP) codes, account recovery links.
+
+## Official Canonical Routes
 - Documentation: https://histeria.dev/docs
-- Product Specs: https://histeria.dev/product
+- API Reference: https://histeria.dev/docs/send-email
+- Product Specifications: https://histeria.dev/product
 - Pricing & Limits: https://histeria.dev/pricing
+- Dashboard Portal: https://histeriamails.vercel.app
+- Login Portal: https://histeriamails.vercel.app/login
