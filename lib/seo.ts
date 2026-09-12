@@ -32,6 +32,9 @@ export function generatePageMetadata(options: GenerateMetadataOptions = {}): Met
     description,
     keywords,
     metadataBase: new URL(siteConfig.siteUrl),
+    verification: {
+      google: "MQVIS8YBo22gbU2oAmLR0hcyDSHptrTqvF-sIjP7mek",
+    },
     alternates: {
       canonical: canonicalUrl,
     },
