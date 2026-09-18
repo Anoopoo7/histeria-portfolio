@@ -1,23 +1,23 @@
 {
   "faqs": [
     {
-      "question": "What is Histeria?",
-      "answer": "Histeria is a simple transactional email platform designed for applications, SaaS products, ecommerce stores, fintech apps, and developers. It allows you to trigger emails via a REST API or SMTP bridge with customizable templates and tracking."
+      "question": "What is Histeria (Histeria Mailer)?",
+      "answer": "Histeria (also known as Histeria Mailer or Histeria Email API) is a transactional email infrastructure platform for software applications, developers, SaaS products, ecommerce stores, and fintech apps. It allows developers to trigger transactional emails via a simple REST API or SMTP relay with customizable email templates, lifecycle event tracking, and delivery logs."
     },
     {
-      "question": "How do I authenticate API calls?",
-      "answer": "All transactional email requests use organization API keys passed in the 'x-api-key' request header. You can generate, expire, and revoke keys directly from your dashboard."
+      "question": "How do I authenticate API calls in Histeria Mailer?",
+      "answer": "All transactional email requests use organization API keys passed in the 'x-api-key' request header. You can generate, expire, and revoke keys directly from your Histeria dashboard."
     },
     {
-      "question": "What template editors are supported?",
-      "answer": "Histeria supports both a drag-and-drop Visual Builder and an HTML Code Editor. Both result in Histeria templates accessible by template ID or slug."
+      "question": "What template editors are supported by Histeria Mailer?",
+      "answer": "Histeria supports both a drag-and-drop Visual Email Builder and an HTML Code Editor. Both result in Histeria templates accessible by template ID or slug."
     },
     {
-      "question": "Does Histeria support SMTP?",
+      "question": "Does Histeria Mailer support SMTP integration?",
       "answer": "Yes. If your backend already sends email using standard SMTP protocols, you can configure Histeria's organization SMTP settings without rewriting application code."
     },
     {
-      "question": "How does template versioning work?",
+      "question": "How does template versioning work in Histeria?",
       "answer": "Histeria maintains immutable template version histories. You can edit draft versions, preview changes, and designate a Current Version so application API triggers remain stable."
     },
     {

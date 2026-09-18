@@ -1,12 +1,21 @@
 import { siteConfig } from "@/lib/site-config";
 import { getProductConfig } from "@/lib/content";
 
+const BRAND_ALIASES = [
+  "Histeria Mailer",
+  "Histeria Email API",
+  "Histeria Email",
+  "Histeria Transactional Email",
+  "Histeria Mail"
+];
+
 export function organizationSchema() {
   const product = getProductConfig();
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.name,
+    alternateName: BRAND_ALIASES,
     url: siteConfig.siteUrl,
     logo: `${siteConfig.siteUrl}/favicon.ico`,
     description: product.description,
@@ -19,6 +28,7 @@ export function websiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
+    alternateName: BRAND_ALIASES,
     url: siteConfig.siteUrl,
     description: product.description,
   };
@@ -30,6 +40,7 @@ export function softwareApplicationSchema() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: product.name,
+    alternateName: BRAND_ALIASES,
     operatingSystem: "Cloud API",
     applicationCategory: "DeveloperApplication",
     description: product.description,

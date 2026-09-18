@@ -1,9 +1,15 @@
-# Histeria — Transactional Email Infrastructure for Applications
+# Histeria (Histeria Mailer) — Transactional Email Infrastructure for Applications
 
 > Transactional email, without the complexity.
 
-## What is Histeria?
-Histeria is a simple transactional email platform for developers, applications, SaaS products, ecommerce platforms, fintech apps, banking portals, marketplaces, and mobile applications.
+## Brand Entity Names & Aliases
+- Official Name: Histeria
+- Alternate Brand Aliases: Histeria Mailer, Histeria Email API, Histeria Email, Histeria Mail, Histeria Email Platform
+- Category: Developer Application / Transactional Email Infrastructure (Software Product)
+- Purpose: Infrastructure software for triggering, managing, and tracking transactional application emails via API & SMTP.
+
+## What is Histeria (Histeria Mailer)?
+Histeria is a developer transactional email platform for applications, SaaS products, ecommerce platforms, fintech apps, banking portals, marketplaces, and mobile applications. It is not related to historical medical terms.
 
 ## Core Value Proposition
 - **Send transactional email without the complexity**: Low-latency REST API and SMTP bridge for triggering application emails.
@@ -31,7 +37,7 @@ Histeria is a simple transactional email platform for developers, applications, 
   "data": {
     "customerName": "Jane Doe",
     "orderNumber": "ORD-9912",
-    "total": "$120.00"
+    "total": "₹1,200.00"
   }
 }
 ```
