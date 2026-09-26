@@ -4,6 +4,7 @@ export interface SiteConfig {
   appUrl: string;
   loginUrl: string;
   apiBaseUrl: string;
+  contactWebhookUrl: string;
   cta: {
     primary: { label: string; href: string };
     secondary: { label: string; href: string };

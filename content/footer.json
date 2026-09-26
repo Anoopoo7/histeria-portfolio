@@ -5,6 +5,7 @@
       "links": [
         { "label": "Overview", "href": "/product" },
         { "label": "Pricing & Plans", "href": "/pricing" },
+        { "label": "Contact Us", "href": "/contact" },
         { "label": "Templates", "href": "/docs/templates" },
         { "label": "Email Tracking", "href": "/docs/tracking" }
       ]

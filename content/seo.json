@@ -171,6 +171,17 @@
         "transactional email service",
         "email timeline logs"
       ]
+    },
+    "contact": {
+      "title": "Contact Us | Histeria Transactional Email Platform",
+      "description": "Get in touch with the Histeria team for inquiries, support, feedback, or custom email infrastructure solutions.",
+      "path": "/contact",
+      "keywords": [
+        "contact histeria",
+        "histeria support",
+        "email API feedback",
+        "transactional email help"
+      ]
     }
   }
 }

@@ -30,12 +30,14 @@ import { siteConfig } from "@/lib/site-config";
 export function getSiteConfig(): SiteConfig {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || siteConfigData.appUrl;
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || siteConfigData.apiBaseUrl;
+  const contactWebhookUrl = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL || siteConfig.contactWebhookUrl || siteConfigData.contactWebhookUrl;
 
   return {
     ...siteConfigData,
     siteUrl: siteConfig.siteUrl,
     appUrl,
-    apiBaseUrl
+    apiBaseUrl,
+    contactWebhookUrl
   };
 }
 

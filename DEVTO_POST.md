@@ -4,6 +4,7 @@ published: true
 description: Trigger application emails with one simple REST API, build templates visually or with code, track email lifecycle events, and route via SMTP.
 tags: webdev, javascript, python, api
 canonical_url: https://histeriamails.vercel.app
+cover_image: https://histeriamails.vercel.app/images/devto_cover.jpg
 ---
 
 # 🚀 Introducing Histeria Mailer

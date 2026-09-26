@@ -14,6 +14,7 @@
       ]
     },
     { "label": "Docs", "href": "/docs" },
-    { "label": "Pricing", "href": "/pricing" }
+    { "label": "Pricing", "href": "/pricing" },
+    { "label": "Contact", "href": "/contact" }
   ]
 }

@@ -18,6 +18,7 @@ export const siteConfig = {
   appUrl: process.env.NEXT_PUBLIC_APP_URL || "https://histeriamails.vercel.app",
   loginUrl: process.env.NEXT_PUBLIC_LOGIN_URL || "https://histeriamails.vercel.app/login",
   apiUrl: process.env.NEXT_PUBLIC_API_URL || "https://api.histeria.dev/v1",
+  contactWebhookUrl: process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL || "https://n8n-service-obr8.onrender.com/webhook/contact-us",
   description: "Simple transactional email infrastructure for modern applications.",
   tagline: "Transactional email, without the complexity.",
   locale: "en_US",

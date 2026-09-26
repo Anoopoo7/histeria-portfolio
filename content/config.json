@@ -4,6 +4,7 @@
   "appUrl": "https://histeriamails.vercel.app",
   "loginUrl": "https://histeriamails.vercel.app/login",
   "apiBaseUrl": "https://api.histeria.dev/v1",
+  "contactWebhookUrl": "https://n8n-service-obr8.onrender.com/webhook/contact-us",
   "cta": {
     "primary": {
       "label": "Start sending for free",
